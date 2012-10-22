@@ -9,7 +9,8 @@ call pathogen#infect()
 syntax on
 filetype plugin on
 filetype indent on
-color blackbeauty
+"color blackbeauty
+color eclipse 
 set mouse=a "打开鼠标响应拖拽
 set nocompatible
 set nowrap
