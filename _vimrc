@@ -20,7 +20,7 @@ set number
 set wildmenu "自动补全命令时候使用菜单式匹配列表
 set showcmd "显示命令
 set foldmethod=marker
-
+set hlsearch "搜索关键词高亮
 
 " 缩进
 set shiftwidth=4
