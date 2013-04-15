@@ -33,8 +33,8 @@ set autoindent
 " maps
 """"""""""""""""""""""""""""""
 " fix insert mode Ctrl+X and BackSpace problem
- map <C-X> <S-Del>i
- map <BS> d
+map <C-X> <S-Del>i
+map <BS> d
 
 map <Return> :
 map Q :q<Return>
@@ -55,4 +55,15 @@ map <S-F11> :vertical resize 30<Return>
 map <C-F11> <C-w>=
 
 map <F12> :NERDTree<Return>
-map <F4> :A<Return>
+
+" indent_guides 
+let g:indent_guides_guide_size      = 1
+let g:indent_guides_auto_colors     = 0
+let g:indent_guides_start_level     = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=Green ctermbg=DarkGray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=Green ctermbg=Gray
+
+inoremap    <c-h>           <left>
+inoremap    <c-l>           <right>
+inoremap    <c-j>           <c-o>gj
+inoremap    <c-k>           <c-o>gk

@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/luyan/project/opsdb/opsdblib'
+let g:netrw_dirhist_2='/home/luyan/project/gitosis-admin/keydir'
+let g:netrw_dirhist_3='/home/luyan/project/python-study'
+let g:netrw_dirhist_4='/home/luyan/project/qmon-nagios-daemon/etc'
+let g:netrw_dirhist_5='/home/luyan/project/qmon-nagios-daemon/qmonlib'
+let g:netrw_dirhist_6='/home/luyan/project/opsdb/www/opsdb'
+let g:netrw_dirhist_7='/home/luyan/project/gitosis-admin'
+let g:netrw_dirhist_8='/home/luyan/project/opsdb/www/opsdb/static/opsdb/store/event'
