@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/luyan/project/gitosis-admin/keydir'
 let g:netrw_dirhist_2='/home/luyan/project/opsdb/www/opsdb/static/opsdb'
 let g:netrw_dirhist_3='/home/luyan/project/yumtools/share'
 let g:netrw_dirhist_4='/home/luyan/project/atlas/atlaslib'
 let g:netrw_dirhist_5='/home/luyan/project/atlas/www/atlas/static/atlas/view'
 let g:netrw_dirhist_6='/home/luyan/project/atlas/www/atlas/static/atlas/store'
+let g:netrw_dirhist_7='/home/luyan/project/alertmta/alertmtalib'

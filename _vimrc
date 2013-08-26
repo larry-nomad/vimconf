@@ -67,3 +67,25 @@ inoremap    <c-h>           <left>
 inoremap    <c-l>           <right>
 inoremap    <c-j>           <c-o>gj
 inoremap    <c-k>           <c-o>gk
+
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>    " 用空格键开关折叠
+
+" DoxygenToolkit快捷键
+map         <leader>da      :DoxAuthor<cr>
+map         <leader>df      :Dox<cr>
+map         <leader>db      :DoxBlock<cr>
+
+"{{{ DoxygenToolkit.vim  文档插件
+" :DoxLic        插入License信息
+" :DoxAuthor     插入作者信息
+" :Dox           插入文档注释
+let g:DoxygenToolkit_authorName             = "dongliang.ma"
+let g:DoxygenToolkit_licenseTag             = "BSD\<enter>"
+let g:DoxygenToolkit_undocTag               = "DOXIGEN_SKIP_BLOCK"
+let g:DoxygenToolkit_briefTag_pre           = "@brief\t\t"
+let g:DoxygenToolkit_paramTag_pre           = "@param\t\t"
+let g:DoxygenToolkit_returnTag              = "@return\t\t"
+let g:DoxygenToolkit_throwTag_pre           = "@exception\t\t"
+let g:DoxygenToolkit_briefTag_funcName      = "yes"
+let g:DoxygenToolkit_maxFunctionProtoLines  = 30 
+"}}}
