@@ -2,7 +2,7 @@
 " install pathogen first ~/.vim/autoload/pathogen.vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call pathogen#infect()
-
+let g:config_flake8_dir='/usr/local/bin/'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM userinterface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,7 +36,7 @@ set autoindent
 map <C-X> <S-Del>i
 map <BS> d
 
-map <Return> :
+"map <Return> :
 map Q :q<Return>
 map <C-s> :w<Return>
 
@@ -79,7 +79,7 @@ map         <leader>db      :DoxBlock<cr>
 " :DoxLic        插入License信息
 " :DoxAuthor     插入作者信息
 " :Dox           插入文档注释
-let g:DoxygenToolkit_authorName             = "dongliang.ma"
+let g:DoxygenToolkit_authorName             = "yan.lu"
 let g:DoxygenToolkit_licenseTag             = "BSD\<enter>"
 let g:DoxygenToolkit_undocTag               = "DOXIGEN_SKIP_BLOCK"
 let g:DoxygenToolkit_briefTag_pre           = "@brief\t\t"
@@ -89,3 +89,27 @@ let g:DoxygenToolkit_throwTag_pre           = "@exception\t\t"
 let g:DoxygenToolkit_briefTag_funcName      = "yes"
 let g:DoxygenToolkit_maxFunctionProtoLines  = 30 
 "}}}
+
+"{{{ flake8 python语法检查插件
+"let g:no_flake8_maps            = 1    "
+"修改此开关无效，如果要使用默认快捷键，注释掉此句
+let g:flake8_cmd                = g:config_flake8_dir . 'flake8'
+let g:flake8_builtins           = "_,apply"
+let g:flake8_ignore             = "C0103"
+let g:flake8_max_line_length    = 120
+let g:flake8_max_complexity     = 7
+let g:pyflakes_use_quickfix     = 0
+autocmd BufWritePost    *.py    call Flake8()
+"}}}
+
+""{{{ syntastic  支持多种语言的语法检查插件
+let g:syntastic_check_on_open           = 1
+let g:pep8_cmd                          = g:config_flake8_dir . 'pep8'
+let g:pyflakes_cmd                      = g:config_flake8_dir . 'pyflakes'
+let g:pylint_cmd                        = g:config_flake8_dir . 'pylint'
+let g:syntastic_python_checkers         = ['pylint', 'flake8', 'pep8', 'pyflakes']
+let g:syntastic_python_pylint_args      ="-disable-msg=C0103"                                                                                                                       
+"}}}
+
+
+
