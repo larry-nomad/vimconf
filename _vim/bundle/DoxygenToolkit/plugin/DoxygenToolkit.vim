@@ -799,7 +799,7 @@ function! <SID>DoxygenCommentFunc()
     endfor
   else
     " FIXME: python注释默认添加@exception
-    exec "normal o".s:interCommentTag
+    exec "normal o".s:interCommentNoneTag
     exec "normal o".s:interCommentTag.g:DoxygenToolkit_throwTag_pre
   endif
 
@@ -1088,6 +1088,7 @@ function! s:InitializeParameters()
   else
     let s:startCommentTag   = "## "
     let s:interCommentTag   = "# "
+    let s:interCommentNoneTag   = "#"
     let s:endCommentTag     = ""
     let s:startCommentBlock = "# "
     let s:interCommentBlock = "# "

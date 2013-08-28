@@ -90,26 +90,17 @@ let g:DoxygenToolkit_briefTag_funcName      = "yes"
 let g:DoxygenToolkit_maxFunctionProtoLines  = 30 
 "}}}
 
-"{{{ flake8 python语法检查插件
-"let g:no_flake8_maps            = 1    "
-"修改此开关无效，如果要使用默认快捷键，注释掉此句
-let g:flake8_cmd                = g:config_flake8_dir . 'flake8'
-let g:flake8_builtins           = "_,apply"
-let g:flake8_ignore             = "C0103"
-let g:flake8_max_line_length    = 120
-let g:flake8_max_complexity     = 7
-let g:pyflakes_use_quickfix     = 0
-autocmd BufWritePost    *.py    call Flake8()
+"{{{ syntastic  支持多种语言的语法检查插件
+let g:syntastic_check_on_open               = 1
+let g:pep8_cmd                              = g:config_flake8_dir . 'pep8'
+let g:flake8_cmd                            = g:config_flake8_dir . 'flake8'
+let g:pyflakes_cmd                          = g:config_flake8_dir . 'pyflakes'
+let g:pylint_cmd                            = g:config_flake8_dir . 'pylint'
+let g:syntastic_python_checkers             = ['pylint', 'flake8', 'pep8', 'pyflakes']
+let g:syntastic_python_pylint_args          ="-disable-msg=C0103 --max-line-length=120"
+let g:syntastic_python_pep8_args            ="--max-line-length=120"
+let g:syntastic_python_flake8_args          ="--max-line-length=120 --max-complexity=6"                                                                                             
+let g:syntastic_always_populate_loc_list    =1
 "}}}
 
-""{{{ syntastic  支持多种语言的语法检查插件
-let g:syntastic_check_on_open           = 1
-let g:pep8_cmd                          = g:config_flake8_dir . 'pep8'
-let g:pyflakes_cmd                      = g:config_flake8_dir . 'pyflakes'
-let g:pylint_cmd                        = g:config_flake8_dir . 'pylint'
-let g:syntastic_python_checkers         = ['pylint', 'flake8', 'pep8', 'pyflakes']
-let g:syntastic_python_pylint_args      ="-disable-msg=C0103"                                                                                                                       
-"}}}
-
-
-
+autocmd FileType python         map <buffer> <F7>    :Errors<CR>
